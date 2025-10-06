@@ -2,9 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const application = express();
 const mongoose = require('mongoose');
+require('dotenv').config();
 const Product = require('./models/Product');
 
-mongoose.connect('mongodb+srv://inconnuenom:inconnuenomnom@cluster0.yqajvi4.mongodb.net/go-fullstack-tp1',
+mongoose.connect(process.env.DB_URI,
   { useNewUrlParser: true,
     useUnifiedTopology: true 
   })
